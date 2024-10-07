@@ -35,8 +35,8 @@ export default function LoginPage() {
               Hello<br className="hidden lg:inline" />hackers!
               <span className="inline-block ml-2" aria-hidden="true">👋</span>
             </h1>
-            <p className="text-base lg:text-lg text-white/80 mt-2 lg:mt-4 hidden lg:block">
-              Say Hi to your AI-powered companion for your hackathon competition and features that will make your project stand out.
+            <p className="text-base lg:text-lg text-white/80 mt-2 w-3/3 lg:mt-4 hidden lg:block">
+            Meet Hackture, your AI-powered companion for hackathons. From smart project ideas to real-time collaboration and coding assistance, Hackture helps you work faster and smarter. With its powerful features, you wll streamline your process and make your project stand out.
             </p>
           </div>
           <div className="text-white/60 text-xs lg:text-sm mt-4 lg:mt-0 hidden lg:block">
@@ -44,11 +44,11 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-      <div className="p-4 lg:p-8 xl:p-16 flex-grow lg:w-1/2 flex items-center justify-center bg-gray-50 dark:bg-black transition-colors duration-300">
+      <div className="p-4 lg:p-8 xl:p-16 flex-grow lg:w-1/2 flex items-center justify-center bg-gray-50 dark:bg-black transition-colors duration-300 rounded-lg shadow-lg">
         <div className="w-full max-w-md space-y-6 lg:space-y-8">
           <div className="flex justify-between items-center">
             <div>
-              <h2 className="text-2xl lg:text-3xl font-bold mb-1 lg:mb-2 text-gray-900 dark:text-white">Hack</h2>
+              <h2 className="text-2xl lg:text-3xl font-bold mb-1 lg:mb-2 text-gray-900 dark:text-white">Hackture</h2>
               <h3 className="text-xl lg:text-2xl font-semibold mb-2 lg:mb-4 text-gray-700 dark:text-gray-300">Welcome Back!</h3>
             </div>
             <Button
@@ -68,7 +68,7 @@ export default function LoginPage() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="hisalim.ux@gmail.com"
+                  placeholder="example@gmail.com"
                   className="pl-12 py-4 lg:py-6 bg-white dark:bg-black text-gray-900 dark:text-white"
                 />
               </div>

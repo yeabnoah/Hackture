@@ -12,10 +12,15 @@ import { FaGithub } from "react-icons/fa6"
 import { loginAction } from "@/actions/login"
 import Link from "next/link"
 import { signUpAction } from '@/actions/signUp';
+import { signUpSchema } from '@/validation/signUpschema';
 
 export default function SignUpPage() {
   const { theme, toggleTheme } = useTheme();
-  const [showPassword, setShowPassword] = useState(false); // Add state for password visibility
+  const [showPassword, setShowPassword] = useState(false);
+
+  // const handleForm = () => {
+    
+  // }
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen dark:bg-black transition-colors duration-300">
@@ -36,8 +41,8 @@ export default function SignUpPage() {
               Hello<br className="hidden lg:inline" />hackers!
               <span className="inline-block ml-2" aria-hidden="true">👋</span>
             </h1>
-            <p className="text-base lg:text-lg text-white/80 mt-2 lg:mt-4 hidden lg:block">
-              Say Hi to your AI-powered companion for your hackathon competition and features that will make your project stand out.
+            <p className="text-base lg:text-lg text-white/80 mt-2 w-3/3 lg:mt-4 hidden lg:block">
+            Meet Hackture, your AI-powered companion for hackathons. From smart project ideas to real-time collaboration and coding assistance, Hackture helps you work faster and smarter. With its powerful features, you wll streamline your process and make your project stand out.
             </p>
           </div>
           <div className="text-white/60 text-xs lg:text-sm mt-4 lg:mt-0 hidden lg:block">
@@ -49,7 +54,7 @@ export default function SignUpPage() {
         <div className="w-full max-w-md space-y-4 lg:space-y-6">
           <div className="flex justify-between items-center">
             <div>
-              <h2 className="text-2xl lg:text-3xl font-bold mb-1 lg:mb-2 text-gray-900 dark:text-white">Hack</h2>
+              <h2 className="text-2xl lg:text-3xl font-bold mb-1 lg:mb-2 text-gray-900 dark:text-white">Hackture</h2>
               <h3 className="text-xl lg:text-2xl font-semibold mb-2 lg:mb-4 text-gray-700 dark:text-gray-300">Create Account</h3>
             </div>
             <Button
@@ -68,6 +73,7 @@ export default function SignUpPage() {
               <Input
                 id="firstName"
                 type="text"
+                name='first_name'
                 placeholder="John"
                 className="pl-4 py-4 lg:py-6 bg-white dark:bg-black text-gray-900 dark:text-white"
               />
@@ -77,6 +83,7 @@ export default function SignUpPage() {
               <Input
                 id="lastName"
                 type="text"
+                name='last_name'
                 placeholder="Doe"
                 className="pl-4 py-4 lg:py-6 bg-white dark:bg-black text-gray-900 dark:text-white"
               />
@@ -86,6 +93,7 @@ export default function SignUpPage() {
               <Input
                 id="github"
                 type="text"
+                name="github_username"
                 placeholder="your-github-username"
                 className="pl-4 py-4 lg:py-6 bg-white dark:bg-black text-gray-900 dark:text-white"
               />
@@ -97,6 +105,7 @@ export default function SignUpPage() {
                 <Input
                   id="email"
                   type="email"
+                  name="email"
                   placeholder="hisalim.ux@gmail.com"
                   className="pl-12 py-4 lg:py-6 bg-white dark:bg-black text-gray-900 dark:text-white"
                 />
@@ -107,6 +116,7 @@ export default function SignUpPage() {
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500" size={18} />
                 <Input
+                  name='password'
                   id="password"
                   type={showPassword ? "text" : "password"} // Toggle input type based on state
                   placeholder="Enter your password"
@@ -120,9 +130,9 @@ export default function SignUpPage() {
                 </div>
               </div>
             </div>
-            <Button className="w-full bg-gray-900 text-sm lg:text-base hover:bg-black dark:bg-white dark:text-black text-white py-3 lg:py-5 rounded-xl transition duration-300 ease-in-out">
-              Login Now
-              <ArrowRight className="ml-2" size={18} />
+            <Button type='submit' className="w-full bg-gray-900 text-sm lg:text-sm  hover:bg-black dark:bg-white dark:text-black text-white py-3 lg:py-6 rounded-xl transition duration-300 ease-in-out lg:mt-3">
+              Create Account
+              <ArrowRight className="ml-2" size={14} />
             </Button>
           </form>
           <div className="relative">

@@ -1,9 +1,13 @@
 import { ThemeProvider } from '@/lib/ThemeContext';
 import type { Metadata } from 'next';
-import { Manrope } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 
-const inter = Manrope({ subsets: ['latin'] });
+const inter = Poppins({ 
+    subsets: ['latin'],  
+    display: 'swap', 
+    weight: '400'
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -23,3 +27,4 @@ export default function RootLayout({
     </ThemeProvider>
   )
 }
+
