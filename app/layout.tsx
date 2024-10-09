@@ -2,7 +2,7 @@ import { ThemeProvider } from '@/lib/ThemeContext';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
-
+import ReactQueryProvider from '@/lib/ReactQueryProvider';
 const inter = Poppins({ 
     subsets: ['latin'],  
     display: 'swap', 
@@ -17,12 +17,18 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode // Ensure this is a valid React element or plain object
 }) {
+
+
   return (
     <ThemeProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+        <ReactQueryProvider>
+          {children}
+        </ReactQueryProvider>
+          </body>
       </html>
     </ThemeProvider>
   )

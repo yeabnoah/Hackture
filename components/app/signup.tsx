@@ -13,14 +13,17 @@ import { loginAction } from "@/actions/login"
 import Link from "next/link"
 import { signUpAction } from '@/actions/signUp';
 import { signUpSchema } from '@/validation/signUpschema';
+import axios from "axios"
 
 export default function SignUpPage() {
   const { theme, toggleTheme } = useTheme();
   const [showPassword, setShowPassword] = useState(false);
 
-  // const handleForm = () => {
-    
-  // }
+  const fetchData = async () =>{
+    const response = await axios.get("/api/signup")
+
+    console.log(response.data)
+  }
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen dark:bg-black transition-colors duration-300">
