@@ -4,38 +4,40 @@ import connectDB from "@/lib/mongodbConfig"
 import User from "@/model/user"
 
 
-export const GET =async () =>{
+export const GET = async () => {
     await connectDB()
     const users = await User.find()
 
     return Response.json(users)
 }
 
-export const POST = async (request : Request) =>{
+export const POST = async (request: Request) => {
     await connectDB()
     const users = await User.find()
-    const {first_name, last_name, email, password, github_username} = await request.json();
+    const { first_name, last_name, email, password, github_username } = await request.json();
     const hashedPassword = await bcrypt.hash(password, 10)
-    const foundUser = await User.findOne({email : email}) 
+    const foundUser = await User.findOne({ email: email })
 
-    if (!foundUser){
+    if (!foundUser) {
 
-        const newUser = await User.create({
+        const newUser: userInterface = await User.create({
             first_name,
             last_name,
             email,
-            password : hashedPassword,
+            password: hashedPassword,
             github_username
         })
 
         return Response.json({
-            data : newUser,
-            success : true
+            data: newUser,
+            success: true,
+            message: "user successfully Registered"
         })
-    }else{
+    } else {
         return Response.json({
-            success : false,
-            message : "User already exists"
+            data: null,
+            success: false,
+            message: "User already exists"
         })
     }
 }
