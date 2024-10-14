@@ -1,7 +1,14 @@
 import LoginPage from '@/components/app/login'
-import React from 'react'
+import { auth } from '@/lib/auth'
+import { redirect } from 'next/navigation'
 
-const page = () => {
+const Page = async () => {
+  const session = await auth()
+
+  if (session) {
+    redirect("/")
+  }
+
   return (
     <div>
       <LoginPage />
@@ -9,4 +16,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

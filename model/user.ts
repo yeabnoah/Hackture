@@ -13,16 +13,22 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
+        match: /.+\@.+\..+/
     },
     github_username: {
         type: String
     },
     password: {
-        type: String
-    }
+        type: String,
+    },
+    role: {
+        type: String,
+        default: "user"
+    },
+    image: { type: String },
+    authProviderId: { type: String },
 });
 
-// Check if the model is already defined
-const User = mongoose.models.User || mongoose.model("User", userSchema);
+const User = mongoose.models?.User || mongoose.model("User", userSchema);
 
 export default User;

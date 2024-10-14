@@ -1,9 +1,20 @@
-import SignUpPage from '@/components/app/signup'
+import Center from "@/components/app/feed/center"
+import Left from "@/components/app/feed/left"
+import Right from "@/components/app/feed/right"
+import TopBar from "@/components/app/feed/topbar"
 
-export default function Home() {
+export default function SocialPlatform() {
+
+
   return (
-    <main className="">
-        <SignUpPage />
-    </main>
+    <div className="min-h-screen bg-black/80 text-white px-5 md:px-10 pb-10 pt-5">
+      <TopBar />
+      <div className="flex flex-col md:flex-row space-x-6">
+        <Left />
+
+        <Center />
+        <Right />
+      </div>
+    </div>
   )
 }
