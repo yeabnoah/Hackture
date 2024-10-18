@@ -56,7 +56,7 @@ const Center = () => {
                     <PostInput />
                 </div>
 
-                <Card className="bg-cardBg rounded-md my-5 shadow-lg transition-shadow hover:shadow-xl">
+                <Card className="bg-cardBg rounded-md h-64 w-[600px] my-5 shadow-lg transition-shadow hover:shadow-xl">
                     <CardHeader className="p-4 flex flex-row items-start space-x-4 rounded-lg">
                         <Avatar className="h-8 w-8">
                             <AvatarImage src="/default_user.jpg" alt="George Jose" />
@@ -68,7 +68,7 @@ const Center = () => {
                     </CardHeader>
                     <CardContent className="px-4">
                         <p className="mb-4 text-xs md:text-base">Lorem ipsum dolor sit amet consectetur. Porttitor.</p>
-                        <img src="/hack.png?height=300&width=500" alt="Post image" className="w-full rounded-xl mb-4 shadow-md" />
+                        <img src="/hack.png?height=300&width=500" alt="Post image" className=" rounded-xl mb-4 shadow-md w-fit h-fit" />
                     </CardContent>
                     <CardFooter className="p-4 flex justify-between items-center">
                         <div className="flex space-x-4">

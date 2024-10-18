@@ -8,13 +8,13 @@ import Image from "next/image"
 import { FcGoogle } from "react-icons/fc"
 import { FaGithub, FaGoogle } from "react-icons/fa6"
 import Link from "next/link"
-import { signIn } from '@/lib/auth'
 import { ToastContainer, toast, ToastOptions } from 'react-toastify' // Import Toastify with options
 import 'react-toastify/dist/ReactToastify.css'
 import confetti from 'canvas-confetti'
 import { useRouter } from 'next/navigation'
 import { auth } from '@/lib/auth'
 import LoginFormComp from './loginForm_comp'
+import OauthLogin from '../reuseble/oauth'
 
 export default function LoginPage() {
 
@@ -30,17 +30,6 @@ export default function LoginPage() {
     style: {
       color: "#A7EE43"
     }
-  }
-
-
-
-
-  const githubHandler = () => {
-    console.log("github is clicked")
-  }
-
-  const googleHandler = () => {
-    console.log("google is clicked")
   }
 
 
@@ -91,32 +80,7 @@ export default function LoginPage() {
                 <span className="px-2 bg-gray-50 dark:bg-black text-gray-500 dark:text-gray-400">Or continue with</span>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-2">
-              <form
-                action={async () => {
-                  "use server"
-                  await signIn("google")
-                }}
-              >
-                <Button type='submit' variant="outline" className="w-full rounded-xl bg-[#A7EE43] border  border-black/15 dark:bg-white/5 text-gray-900 dark:text-[#A7EE43] py-5">
-                  <FaGoogle size={16} className="mr-2" />
-                  Google
-                </Button>
-              </form>
-
-              <form
-                action={async () => {
-                  "use server"
-                  await signIn("github")
-                }}
-              >
-                <Button type='submit' variant="secondary" className="w-full rounded-xl border border-black/15 bg-[#A7EE43] dark:bg-white/5 text-gray-900 dark:text-[#A7EE43] py-5">
-                  <FaGithub size={18} className="mr-2" />
-                  GitHub
-                </Button>
-
-              </form>
-            </div>
+            <OauthLogin />
             <p className="text-center text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
               Want to create a new account?{" "}
               <Link href="/signup" className="text-blue-600 hover:text-blue-800 dark:text-[#A7EE43] dark:hover:text-[#A7EE43]">

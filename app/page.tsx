@@ -10,8 +10,6 @@ export default function SocialPlatform() {
     <div className="min-h-screen bg-black/80 text-white px-5 md:px-10 pb-10 pt-5">
       <TopBar />
       <div className="flex flex-col md:flex-row space-x-6">
-        <Left />
-
         <Center />
         <Right />
       </div>
