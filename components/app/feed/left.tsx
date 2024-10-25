@@ -1,57 +1,69 @@
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { communities, skills } from '@/utils/constants/feed'
 import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
 import React from 'react'
+import Image from "next/image"
+import { Edit, Search } from 'lucide-react'
+import { MdRssFeed } from "react-icons/md";
+import { TiGroup } from "react-icons/ti";
+import { FaUserCircle } from "react-icons/fa";
+import Link from 'next/link'
 
 const Left = () => {
     return (
-        <div className="hidden md:w-96 md:block space-y-4">
-            <Card className="bg-cardBg rounded-md shadow-md">
-                <CardContent className="p-6">
-                    <div className="relative mb-3">
-                        <Avatar className="h-20 w-20">
-                            <AvatarImage src="/hack.png" alt="Elviz Dizzouza" className='h-20 w-20 rounded-full border-4 border-bodyBg' />
-                            <AvatarFallback>ED</AvatarFallback>
-                        </Avatar>
-                    </div>
-                    <h2 className="text-lg font-semibold mb-1">Elviz Dizzouza</h2>
-                    <p className="text-gray-600 mb-2">@elvizoodem</p>
-                    <p className="text-gray-700 text-center mb-4">UI/UX Designer | Open to new projects</p>
-                    <Button className="w-full">My Profile</Button>
-                </CardContent>
+        <div className=' pl-10'>
+            <Card className=' md:flex md:w-[20vw] hidden md:gap-5 border-none md:p-5 rounded-2xl mb-5'>
+                <Button className=' bg-primaryColor md:flex md:gap-2 text-white py-6 text-lg hover:bg-primaryColor/80 rounded-xl hover:transition-transform hover:scale-125 group hover:rotate-6'>
+                    <MdRssFeed className='' size={16} />
+                    <h2 className=' hidden '>Feed</h2>
+                </Button>
+                <Button className=' bg-primaryColor md:flex md:gap-2 text-white py-6 text-lg hover:bg-primaryColor/80 rounded-xl hover:transition-transform hover:scale-125 group hover:rotate-6'>
+                    <Search className=' h5 w-5' />
+                    <h2 className=' hidden '>Search</h2>
+                </Button>
+                <Button className=' bg-primaryColor md:flex md:gap-2 text-white py-6 text-lg hover:bg-primaryColor/80 rounded-xl hover:transition-transform hover:scale-125 group hover:rotate-6'>
+                    <TiGroup className='' size={16} />
+                    <h2 className=' hidden '>Groups</h2>
+                </Button>
+                <Link href='/profile'>
+                    <Button className=' bg-primaryColor md:flex md:gap-2 text-white py-6 text-lg hover:bg-primaryColor/80 rounded-xl hover:transition-transform hover:scale-125 group hover:rotate-6'>
+                        <FaUserCircle className='' size={16} />
+                        <h2 className=' hidden '>Profile</h2>
+                    </Button>
+                </Link>
+
             </Card>
-            <Card className="bg-cardBg rounded-md">
-                <CardHeader>
-                    <h3 className="font-bold">Skills</h3>
+
+            <Card className='hidden md:block border-none md:w-[20vw]'>
+                <CardHeader className=' flex flex-row gap-5 items-center'>
+                    <Avatar>
+                        <AvatarImage src="/creat.jpg" height={20} width={20} className=' h-12 w-12 rounded-full'></AvatarImage>
+                        <AvatarFallback className=' text-primaryColor border rounded-full p-3 border-primaryColor'>h2</AvatarFallback>
+                    </Avatar>
+                    <div>
+                        <CardTitle className=' text-primaryColor'>Alex Fridman</CardTitle>
+                        <CardDescription className=' text-primaryColor'>nerd@something</CardDescription>
+                    </div>
                 </CardHeader>
                 <CardContent>
-                    <div className="flex flex-wrap gap-2">
-                        {skills.map((skill, index) => (
-                            <span key={index} className="bg-bodyBg px-3 py-1 rounded-full text-sm">{skill}</span>
-                        ))}
-                    </div>
+                    <CardDescription>
+                        I'm alex and i like working with computers and get paid.
+                    </CardDescription>
                 </CardContent>
-            </Card>
-            <Card className="bg-cardBg rounded-md">
-                <CardHeader>
-                    <h3 className="font-bold">Communities</h3>
-                </CardHeader>
-                <CardContent>
-                    {communities.map((community, index) => (
-                        <div key={index} className="flex items-center mb-4 last:mb-0">
-                            <Avatar className="h-10 w-10 mr-3">
-                                <AvatarFallback>{community.name[0]}</AvatarFallback>
-                            </Avatar>
-                            <div>
-                                <p className="text-sm">{community.name}</p>
-                                <p className="text-xs text-gray-400">{community.members} your friends are in</p>
-                            </div>
-                        </div>
-                    ))}
-                </CardContent>
+                <CardFooter className=' '>
+                    <Link href='/profile'>
+                        <Button className=' bg-primaryColor flex items-center gap-2 hover:bg-primaryColor/80 hover:scale-110'>
+
+                            <Edit size={14} />Edit my
+
+                            profile</Button>
+                    </Link>
+
+                </CardFooter>
             </Card>
         </div >
+
     )
 }
 

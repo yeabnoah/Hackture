@@ -21,10 +21,10 @@ const config: Config = {
 			colors: {
 				mainBackgroundColor: "#182c55",
 				secondaryBackgroundColor: "#23355c",
-				cardBg: "transparent",
+				cardBg: "#09090b",
 				bodyBg: "#1A1A1A",
 				primaryBodyColor: "#A7EE43",
-				primaryColor: "#6de0ff",
+				primaryColor: "#7643ee",
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				card: {
