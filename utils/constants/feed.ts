@@ -5,12 +5,12 @@ export const communities = [
     { name: "Back end developers", members: 41 },
 ]
 export const recentActivity = [
-    { name: "Next Js Devs", time: "3 min ago" },
-    { name: "Cristano", time: "3 min ago" },
-    { name: "Brahim diaz", time: "3 min ago" },
-    { name: "John wick", time: "3 min ago" },
-    { name: "Abhilash Jose", time: "3 min ago" },
-    { name: "George Jose", time: "3 min ago" },
+    { name: "Next Js Devs", description: "your safespace", image: "/groups/Ellipse 111-1.png" },
+    { name: "Cristano", description: "your safespace", image: "/groups/Ellipse 111-2.png" },
+    { name: "Brahim diaz", description: "your safespace", image: "/groups/Ellipse 111-3.png" },
+    { name: "John wick", description: "your safespace", image: "/groups/Ellipse 111-4.png" },
+    { name: "Abhilash Jose", description: "your safespace", image: "/groups/Ellipse 111-5.png" },
+    { name: "George Jose", description: "your safespace", image: "/groups/Ellipse 111-6.png" },
 ]
 export const friendAvatars = ["Sinan pk", "Jhon", "Rishal", "Fedrick", "David", "Chris"]
 

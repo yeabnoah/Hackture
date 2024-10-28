@@ -3,6 +3,10 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import ReactQueryProvider from '@/lib/ReactQueryProvider';
+import { Sidebar } from 'lucide-react';
+import SideBar from '@/components/reuseble/sidebar';
+import SessionProviderComp from '@/lib/sessionProvider';
+import SidebarProviderComp from '@/lib/sidebarProvider';
 
 const inter = Poppins({
   subsets: ['latin'],
@@ -24,9 +28,18 @@ export default function RootLayout({
     <ThemeProvider>
       <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
         <body className={`${inter.className} bg-black text-white`}>
-          <ReactQueryProvider>
-            {children}
-          </ReactQueryProvider>
+          <SidebarProviderComp>
+            <SessionProviderComp>
+              <ReactQueryProvider>
+                <div className=' md:flex md:flex-row md:flex-shrink md:flex-1 max-h-screen mx-auto '>
+                  <SideBar />
+                  <div className='md:flex-1 md:flex-grow md:mx-auto'>
+                    {children}
+                  </div>
+                </div>
+              </ReactQueryProvider>
+            </SessionProviderComp>
+          </SidebarProviderComp>
         </body>
       </html>
     </ThemeProvider>

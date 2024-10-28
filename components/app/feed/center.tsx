@@ -12,10 +12,7 @@ export default function Component() {
 
 
     return (
-        // <div className="min-h-screen text-black">
-
-
-        <div className="max-w-xl mx-auto">
+        <div className="max-w-2xl">
             <div className=" gap-3 flex flex-col">
                 {posts.map((post) => (
                     <Card key={post.id} className=" border-none px-3  md:px-5 max-w-2xl py-0">

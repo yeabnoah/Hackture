@@ -47,12 +47,12 @@ export default function ProfileScreen() {
     })
 
     return (
-        <div className="flex flex-col items-center my-16">
+        <div className="flex flex-col items-center my-16 flex-1 ml-[16vw] mx-auto">
             <div className="max-w-6xl w-full p-4">
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 ">
                     <img
                         src={userData?.profileImage}
-                        alt="Profile picture of Jane Doe"
+                        alt="Profile"
                         className="w-24 h-24 rounded-full border-4 border-background"
                     />
 
@@ -94,7 +94,7 @@ export default function ProfileScreen() {
 
                 <hr className=" my-5 border-primaryColor " />
                 <Tabs defaultValue="posts" className="mb-6">
-                    <TabsList className="justify-center sm:justify-start">
+                    <TabsList className="justify-center sm:justify-start bg-primaryColor text-black opacity-60">
                         <TabsTrigger value="posts">Posts</TabsTrigger>
                         <TabsTrigger value="media">Media</TabsTrigger>
                         <TabsTrigger value="likes">Likes</TabsTrigger>

@@ -12,8 +12,8 @@ import Link from 'next/link'
 
 const Left = () => {
     return (
-        <div className=' pl-10'>
-            <Card className=' md:flex md:w-[20vw] hidden md:gap-5 border-none md:p-5 rounded-2xl mb-5'>
+        <div className=' pl-10 bg-red-500'>
+            <Card className=' md:flex md:w-[20vw] md:gap-5 border-none md:p-5 rounded-2xl mb-5'>
                 <Button className=' bg-primaryColor md:flex md:gap-2 text-white py-6 text-lg hover:bg-primaryColor/80 rounded-xl hover:transition-transform hover:scale-125 group hover:rotate-6'>
                     <MdRssFeed className='' size={16} />
                     <h2 className=' hidden '>Feed</h2>
@@ -35,7 +35,7 @@ const Left = () => {
 
             </Card>
 
-            <Card className='hidden md:block border-none md:w-[20vw]'>
+            <Card className=' md:block border-none md:w-[20vw]'>
                 <CardHeader className=' flex flex-row gap-5 items-center'>
                     <Avatar>
                         <AvatarImage src="/creat.jpg" height={20} width={20} className=' h-12 w-12 rounded-full'></AvatarImage>
