@@ -28,7 +28,6 @@ const SignUpForm = () => {
         password: '',
         firstName: '',
         lastName: '',
-        githubUsername: ''
     })
     const [showPassword, setShowPassword] = useState(false)
     const [loading, setLoading] = useState(false)
@@ -123,7 +122,7 @@ const SignUpForm = () => {
                         </div>
                     ))}
                 </div>
-                {['githubUsername', 'email', 'password'].map((field) => (
+                {['email', 'password'].map((field) => (
                     <div key={field} className="space-y-1">
                         <Label htmlFor={field} className="md:text-base text-gray-700 dark:text-gray-300">
                             {field.charAt(0).toUpperCase() + field.slice(1).replace(/([A-Z])/g, ' $1').trim()}
@@ -131,7 +130,6 @@ const SignUpForm = () => {
                         <div className="relative">
                             {field === 'email' && <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500" size={14} />}
                             {field === 'password' && <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500" size={14} />}
-                            {field === 'githubUsername' && <FaGithub className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500" size={14} />}
                             <Input
                                 id={field}
                                 name={field}

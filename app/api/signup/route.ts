@@ -14,7 +14,7 @@ export const GET = async () => {
 export const POST = async (request: Request) => {
     await connectDB()
     const users = await User.find()
-    const { first_name, last_name, email, password, github_username } = await request.json();
+    const { first_name, last_name, email, password } = await request.json();
     const hashedPassword = await bcrypt.hash(password, 10)
     const foundUser = await User.findOne({ email: email })
 
@@ -24,8 +24,7 @@ export const POST = async (request: Request) => {
             first_name,
             last_name,
             email,
-            password: hashedPassword,
-            github_username
+            password: hashedPassword
         })
 
         return Response.json({

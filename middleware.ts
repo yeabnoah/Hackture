@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server"
 export { auth as authMiddleware } from "@/lib/auth"
 
 export const config = {
-    matcher: ["/dashboard", "/", "/profile"],
+    matcher: ["/dashboard", "/", "/profile", "/api/profile"],
 }
 
 export async function middleware(req: NextRequest) {

@@ -15,9 +15,6 @@ const userSchema = new mongoose.Schema({
         unique: true,
         match: /.+\@.+\..+/
     },
-    github_username: {
-        type: String
-    },
     password: {
         type: String,
     },

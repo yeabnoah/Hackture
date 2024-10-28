@@ -5,7 +5,6 @@ export interface SignUpData {
     password: string;
     firstName: string;
     lastName: string;
-    githubUsername: string;
 }
 
 export interface SignupResponse {
