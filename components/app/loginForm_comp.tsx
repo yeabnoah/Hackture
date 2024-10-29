@@ -44,9 +44,9 @@ const LoginFormComp = () => {
             <ToastContainer />
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                 <div className="space-y-1">
-                    <Label htmlFor="email" className=" text-sm md:text-base text-gray-700 dark:text-gray-300">Email Address</Label>
+                    <Label htmlFor="email" className=" text-sm md:text-base text-gray-300">Email Address</Label>
                     <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500" size={14} />
+                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" size={14} />
                         <Input
                             name="email"
                             id="email"
@@ -54,15 +54,15 @@ const LoginFormComp = () => {
                             placeholder="example@gmail.com"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="pl-10 py-5 bg-white dark:bg-black text-gray-900 dark:text-primaryColor placeholder:text-gray-400 dark:placeholder:text-gray-500 placeholder:opacity-50"
+                            className="pl-10 py-5 bg-black text-primaryColor placeholder:placeholder:text-gray-500 placeholder:opacity-50"
                             required
                         />
                     </div>
                 </div>
                 <div className="space-y-1">
-                    <Label htmlFor="password" className=" text-sm md:text-base text-gray-700 dark:text-gray-300">Password</Label>
+                    <Label htmlFor="password" className=" text-sm md:text-base text-gray-300">Password</Label>
                     <div className="relative">
-                        <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500" size={14} />
+                        <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" size={14} />
                         <Input
                             name='password'
                             id="password"
@@ -70,7 +70,7 @@ const LoginFormComp = () => {
                             placeholder="Enter your password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="pl-10 py-5 bg-white dark:bg-black text-gray-900 dark:text-primaryColor placeholder:text-gray-400 dark:placeholder:text-gray-500 placeholder:opacity-50"
+                            className="pl-10 py-5 bg-black text-primaryColor placeholder:placeholder:text-gray-500 placeholder:opacity-50"
                             required
                         />
                         <button
@@ -84,7 +84,7 @@ const LoginFormComp = () => {
                 </div>
                 <Button
                     type="submit"
-                    className="w-full bg-primatext-primaryColor md:text-base bg-primaryColor hover:bg-primaryColor text-primaryColor dark:text-black  py-5 rounded-xl transition duration-300 ease-in-out"
+                    className="w-full bg-primatext-primaryColor md:text-base bg-primaryColor hover:bg-primaryColor text-black  py-5 rounded-xl transition duration-300 ease-in-out"
                     disabled={isLoading}
                 >
                     {isLoading ? 'Logging in...' : 'Login Now'}

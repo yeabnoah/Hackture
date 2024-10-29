@@ -15,7 +15,7 @@ export default function Component() {
         <div className="max-w-2xl">
             <div className=" gap-3 flex flex-col">
                 {posts.map((post) => (
-                    <Card key={post.id} className=" border-none px-3  md:px-5 max-w-2xl py-0">
+                    <Card key={post.id} className=" bg-cardBg border-none px-3  md:px-5 max-w-2xl py-0">
                         <CardHeader className="flex flex-row items-center gap-2 justify-center px-0">
                             <Avatar>
                                 <AvatarImage src="/creat.jpg" alt={post.author} className=" rounded-none" />

@@ -12,8 +12,8 @@ const OauthLogin = () => {
                     await signIn("google")
                 }}
             >
-                <Button type='submit' variant="outline" className="w-full md:text-base rounded-xl bg-primaryColor border  border-black/15 dark:bg-white/5 text-gray-900 dark:text-primaryColor md:py-6 py-3">
-                    <FaGoogle size={16} className="mr-2" />
+                <Button type='submit' variant="outline" className="w-full md:text-base rounded-xl bg-primaryColor border-black border  bg-white/5 text-primaryColor md:py-6 py-3">
+                    <FaGoogle size={24} className="mr-2" />
                     Google
                 </Button>
             </form>
@@ -24,8 +24,8 @@ const OauthLogin = () => {
                     await signIn("github")
                 }}
             >
-                <Button type='submit' variant="secondary" className="w-full rounded-xl md:*:text-base border border-black/15 dark:bg-white/5 text-gray-900 dark:text-primaryColor py-3 md:py-6">
-                    <FaGithub size={18} className="mr-2" />
+                <Button type='submit' variant="secondary" className="w-full rounded-xl md:*:text-base border border-black bg-white/5 text-primaryColor py-3 md:py-6">
+                    <FaGithub size={20} className="mr-2" />
                     GitHub
                 </Button>
 

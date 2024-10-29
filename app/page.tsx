@@ -9,8 +9,8 @@ export default function SocialPlatform() {
 
 
   return (
-    <div className="min-h-screen h-screen text-white md:px-4 px-2 md:py-10" >
-      <div className="md:flex ">
+    <div className="min-h-screen h-screen text-white bg-black md:px-4 px-2 md:py-10" >
+      <div className="md:flex bg-black">
         <div className=" flex-1 mx-auto md:ml-[26vw]">
           <Center />
         </div>
@@ -18,11 +18,6 @@ export default function SocialPlatform() {
           <RightSidebar />
         </div>
       </div>
-
-      <div className="flex">
-        <Left />
-      </div>
-
     </div>
   )
 }

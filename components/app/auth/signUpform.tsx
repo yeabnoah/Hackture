@@ -103,17 +103,17 @@ const SignUpForm = () => {
                 <div className="flex space-x-3">
                     {['firstName', 'lastName'].map((field) => (
                         <div key={field} className="flex-1 space-y-1">
-                            <Label htmlFor={field} className="md:text-base text-gray-700 dark:text-gray-300">
+                            <Label htmlFor={field} className="md:text-base  text-gray-300">
                                 {field === 'firstName' ? 'First Name' : 'Last Name'}
                             </Label>
                             <div className="relative">
-                                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500" size={14} />
+                                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" size={14} />
                                 <Input
                                     id={field}
                                     name={field}
                                     type="text"
                                     placeholder={field === 'firstName' ? 'John' : 'Doe'}
-                                    className={`pl-10 py-5 bg-white dark:bg-black text-primaryColor placeholder-gray-300 dark:placeholder-gray-600 ${errors[field]?.error ? 'border-red-500' : ''}`}
+                                    className={`pl-10 py-5 bg-black text-primaryColor placeholder-gray-600 ${errors[field]?.error ? 'border-red-500' : ''}`}
                                     value={formData[field as keyof typeof formData]}
                                     onChange={handleInputChange}
                                 />
@@ -124,18 +124,18 @@ const SignUpForm = () => {
                 </div>
                 {['email', 'password'].map((field) => (
                     <div key={field} className="space-y-1">
-                        <Label htmlFor={field} className="md:text-base text-gray-700 dark:text-gray-300">
+                        <Label htmlFor={field} className="md:text-base text-gray-300">
                             {field.charAt(0).toUpperCase() + field.slice(1).replace(/([A-Z])/g, ' $1').trim()}
                         </Label>
                         <div className="relative">
-                            {field === 'email' && <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500" size={14} />}
-                            {field === 'password' && <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500" size={14} />}
+                            {field === 'email' && <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" size={14} />}
+                            {field === 'password' && <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" size={14} />}
                             <Input
                                 id={field}
                                 name={field}
                                 type={field === 'password' ? (showPassword ? 'text' : 'password') : 'text'}
                                 placeholder={`Enter your ${field.replace(/([A-Z])/g, ' $1').toLowerCase()}`}
-                                className={`pl-10 py-5 bg-white dark:bg-black text-primaryColor placeholder-gray-300 dark:placeholder-gray-600 ${errors[field]?.error ? 'border-red-500' : ''
+                                className={`pl-10 py-5 bg-black text-primaryColor placeholder-gray-600 ${errors[field]?.error ? 'border-red-500' : ''
                                     } focus:outline-none`}
                                 value={formData[field as keyof typeof formData]}
                                 onChange={handleInputChange}
@@ -143,7 +143,7 @@ const SignUpForm = () => {
                             {field === 'password' && (
                                 <div
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-400 dark:text-gray-500"
+                                    className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"
                                 >
                                     {showPassword ? <EyeOff size={14} /> : <Eye size={14} />}
                                 </div>
@@ -152,7 +152,7 @@ const SignUpForm = () => {
                         {errors[field]?.error && <p className="text-red-500 text-xs">{errors[field]?.message}</p>}
                     </div>
                 ))}
-                <Button onClick={handleSignUp} type='button' className="w-full md:text-base  dark:bg-primaryColor dark:text-black text-black py-5 rounded-xl transition duration-300 ease-in-out my-5">
+                <Button onClick={handleSignUp} type='button' className="w-full md:text-base  bg-primaryColor text-black  py-5 rounded-xl transition duration-300 ease-in-out my-5">
                     Create Account
                     <ArrowRight className="ml-2" size={14} />
                 </Button>

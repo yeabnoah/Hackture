@@ -50,27 +50,27 @@ export default function LoginPage() {
         </div>
         <div className="p-4 pt-0 flex-1 sm:p-6 md:p-8 lg:py-16 xl:py-24 
         h-fit
-        flex-grow lg:w-1/2 flex items-center justify-center bg-gray-50 dark:bg-black transition-colors duration-300 md:h-screen overflow-y-auto">
+        flex-grow lg:w-1/2 flex items-center justify-center bg-black transition-colors duration-300 md:h-screen overflow-y-auto">
           <div className="w-full max-w-md space-y-4 sm:space-y-6">
             <div className="flex justify-between items-center">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-1 text-primaryColor dark:text-primaryColor">Nerdspace</h2>
-                <h3 className="text-lg md:text-xl font-semibold mb-2 text-gray-700 dark:text-gray-300">Welcome Back !</h3>
+                <h2 className="text-2xl md:text-3xl font-bold mb-1 text-primaryColor">Nerdspace</h2>
+                <h3 className="text-lg md:text-xl font-semibold mb-2 text-gray-300">Welcome Back !</h3>
               </div>
             </div>
             <LoginFormComp />
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
+                <div className="w-full border-t border-gray-600"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-gray-50 md:text-base dark:bg-black text-gray-500 dark:text-gray-400">Or continue with</span>
+                <span className="px-2 md:text-base bg-black text-gray-400">Or continue with</span>
               </div>
             </div>
             <OauthLogin />
-            <p className="text-center text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
+            <p className="text-center text-gray-400 text-xs sm:text-sm">
               Want to create a new account?{" "}
-              <Link href="/signup" className="text-blue-600 hover:text-blue-800 dark:text-primaryColor dark:hover:text-primaryColor">
+              <Link href="/signup" className=" text-primaryColor hover:text-primaryColor">
                 Register Now
               </Link>
             </p>

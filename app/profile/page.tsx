@@ -47,7 +47,7 @@ export default function ProfileScreen() {
     })
 
     return (
-        <div className="flex flex-col items-center my-16 flex-1 ml-[16vw] mx-auto">
+        <div className="flex flex-col items-center my-16 flex-1 md:ml-[16vw] mx-auto">
             <div className="max-w-6xl w-full p-4">
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 ">
                     <img
@@ -93,66 +93,38 @@ export default function ProfileScreen() {
 
 
                 <hr className=" my-5 border-primaryColor " />
-                <Tabs defaultValue="posts" className="mb-6">
-                    <TabsList className="justify-center sm:justify-start bg-primaryColor text-black opacity-60">
+                <Tabs defaultValue="posts" className="mb-6 flex flex-col gap-3">
+                    <TabsList className="justify-start bg-primaryColor w-fit text-black opacity-60 mb-10 md:mb-0">
                         <TabsTrigger value="posts">Posts</TabsTrigger>
                         <TabsTrigger value="media">Media</TabsTrigger>
                         <TabsTrigger value="likes">Likes</TabsTrigger>
                     </TabsList>
-                    <TabsContent value="posts">
-                        {/* Recent Posts */}
-                        <div className="space-y-4 flex flex-row flex-wrap items-center gap-5">
+                    <TabsContent value="posts" className=" flex flex-row items-center justify-center md:justify-normal mt-10 md:mt-0">
+                        <div className="space-y-1 md:space-y-4 flex flex-row flex-wrap items-center md:gap-5">
                             {posts.map((post) => (
-                                <Card key={post.id} className="border-none px-3 md:px-5 max-w-xs py-0">
+                                <Card key={post.id} className="border-none px-3 md:px-5 max-w-xs md:max-w-xs py-0 mx-auto md:mx-0 bg-cardBg">
                                     <CardHeader className="flex flex-row items-center gap-2 justify-center px-0">
                                         <Avatar>
                                             <AvatarImage src="/creat.jpg" alt={post.author} className="rounded-none" />
                                             <AvatarFallback>{post.author.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                                         </Avatar>
                                         <div className="flex flex-col">
-                                            <span className="font-semibold text-primaryColor">{post.author}</span>
-                                            <span className="text-xs text-primaryColor/90">{post.username}</span>
+                                            <span className="font-semibold text-primaryColor text-sm md:text-base">{post.author}</span>
+                                            <span className="text-primaryColor/90 text-xs md:text-base">{post.username}</span>
                                         </div>
                                         <Button variant="ghost" size="icon" className="ml-auto">
                                             <MoreHorizontal className="h-4 w-4 text-primaryColor" />
                                         </Button>
                                     </CardHeader>
-                                    <CardContent className="p-0 flex md:flex-col justify-between">
+                                    <CardContent className="p-0 flex md:flex-col justify-between gap5">
                                         <img
                                             src={post.image}
                                             alt="Post image"
                                             className="w-[75vw] aspect-square object-cover rounded-xl"
                                         />
-                                        <div className="flex flex-col md:flex-row md:hidden items-center justify-start gap-5 text-gray-400 mt-2">
-                                            <div className="flex flex-col items-center">
-                                                <button className="text-white p-2 bg-primaryColor rounded-full">
-                                                    <BiUpvote className="h-6 w-6" />
-                                                </button>
-                                                <h2 className="text-xs mt-2">{post.likes}</h2>
-                                            </div>
-                                            <div className="flex flex-col items-center">
-                                                <button className="text-white p-2 bg-primaryColor rounded-full">
-                                                    <MessageCircle className="h-5 w-5" />
-                                                </button>
-                                                <h2 className="text-xs mt-2">{post.comments}</h2>
-                                            </div>
-                                        </div>
                                     </CardContent>
                                     <CardFooter className="pt-4 px-1 w-[75vw] md:w-full flex flex-row gap-5">
-                                        <div className="hidden md:flex-row md:flex items-center justify-start gap-5 text-gray-400 mt-2">
-                                            <div className="flex flex-col items-center">
-                                                <button className="text-white p-2 bg-primaryColor rounded-full">
-                                                    <BiUpvote className="h-5 w-5" />
-                                                </button>
-                                                <h2 className="text-xs mt-2">{post.likes}</h2>
-                                            </div>
-                                            <div className="flex flex-col items-center">
-                                                <button className="text-white p-2 bg-primaryColor rounded-full">
-                                                    <MessageCircle className="h-5 w-5" />
-                                                </button>
-                                                <h2 className="text-xs mt-2">{post.comments}</h2>
-                                            </div>
-                                        </div>
+
                                         <p className="text-xs text-gray-300 mb-2 text-wrap">
                                             {post.content}
                                         </p>

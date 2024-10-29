@@ -36,7 +36,7 @@ export default function Component() {
     return (
         <aside className=" hidden md:flex md:flex-col justify-evenly border-none h-[90vh] rounded-2xl fixed top-10 my-auto mx-10  w-80 p-4 bg-cardBg">
             <div className="flex items-center justify-center mb-8 gap-2">
-                <h1 className="text-3xl text-primaryColor my-5">
+                <h1 className="text-2xl font-medium text-primaryColor my-5">
                     Nerdspace
                 </h1>
             </div>

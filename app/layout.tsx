@@ -27,13 +27,13 @@ export default function RootLayout({
   return (
     <ThemeProvider>
       <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
-        <body className={`${inter.className} bg-black text-white`}>
+        <body className={`${inter.className} bg-black`}>
           <SidebarProviderComp>
             <SessionProviderComp>
               <ReactQueryProvider>
-                <div className=' md:flex md:flex-row md:flex-shrink md:flex-1 max-h-screen mx-auto '>
+                <div className=' md:flex md:flex-row md:flex-shrink bg-black md:flex-1 max-h-screen mx-auto ' style={{ colorScheme: 'dark' }}>
                   <SideBar />
-                  <div className='md:flex-1 md:flex-grow md:mx-auto'>
+                  <div className='md:flex-1 md:flex-grow md:mx-auto bg-black ' style={{ colorScheme: 'dark' }}>
                     {children}
                   </div>
                 </div>
@@ -45,4 +45,3 @@ export default function RootLayout({
     </ThemeProvider>
   )
 }
-
