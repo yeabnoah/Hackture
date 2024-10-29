@@ -7,6 +7,7 @@ import { Sidebar } from 'lucide-react';
 import SideBar from '@/components/reuseble/sidebar';
 import SessionProviderComp from '@/lib/sessionProvider';
 import SidebarProviderComp from '@/lib/sidebarProvider';
+import Left from '@/components/app/feed/left';
 
 const inter = Poppins({
   subsets: ['latin'],
@@ -35,6 +36,10 @@ export default function RootLayout({
                   <SideBar />
                   <div className='md:flex-1 md:flex-grow md:mx-auto bg-black ' style={{ colorScheme: 'dark' }}>
                     {children}
+                  </div>
+
+                  <div className=" md:hidden flex w-full fixed mx-auto bottom-0 justify-center items-center">
+                    <Left />
                   </div>
                 </div>
               </ReactQueryProvider>

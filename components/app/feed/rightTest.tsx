@@ -43,8 +43,8 @@ export default function RightSidebar() {
                     <SidebarGroupLabel className=" text-sm text-primaryColor">Communities to Join</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            {communities.map((community) => (
-                                <SidebarMenuItem key={community.name} className=" my-1">
+                            {communities.map((community, index) => (
+                                <SidebarMenuItem key={index} className=" my-1">
                                     <SidebarMenuButton className="w-full border-white/5 border bg-white/5 py-8 hover:bg-primaryColor rounded-xl">
                                         <Avatar className="h-10 w-10">
                                             <AvatarImage src={community.avatar} alt={community.name} />

@@ -7,15 +7,16 @@ import { BiUpvote } from "react-icons/bi";
 import { MdRssFeed } from "react-icons/md"
 import { TiGroup } from "react-icons/ti"
 import { FaUserCircle } from "react-icons/fa"
+import Left from "./left"
 
 export default function Component() {
 
 
     return (
-        <div className="max-w-2xl">
-            <div className=" gap-3 flex flex-col">
+        <div className="max-w-3xl">
+            <div className=" gap-3 flex flex-col mt-5 md:mt-0">
                 {posts.map((post) => (
-                    <Card key={post.id} className=" bg-cardBg border-none px-3  md:px-5 max-w-2xl py-0">
+                    <Card key={post.id} className=" md:bg-cardBg border-none px-3 flex-1  md:px-5 max-w-2xl py-0">
                         <CardHeader className="flex flex-row items-center gap-2 justify-center px-0">
                             <Avatar>
                                 <AvatarImage src="/creat.jpg" alt={post.author} className=" rounded-none" />
@@ -29,7 +30,7 @@ export default function Component() {
                                 <MoreHorizontal className="h-4 w-4 text-primaryColor" />
                             </Button>
                         </CardHeader>
-                        <CardContent className="p-0 flex md:flex-col justify-between">
+                        <CardContent className="p-0 flex flex-1 gap-3 md:flex-col justify-between">
 
                             <img
                                 src={post.image}

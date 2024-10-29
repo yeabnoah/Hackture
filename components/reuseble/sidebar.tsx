@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import Link from 'next/link' // Import Link from next/link
 import { useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
+import { navItems, profileItems } from '@/utils/constants/nav'
 
 export default function Component() {
     const [activeItem, setActiveItem] = React.useState('Feed')
@@ -19,19 +20,6 @@ export default function Component() {
         redirect("/login")
     }
 
-    const navItems = [
-        { icon: Home, label: 'Feed', link: "/" },
-        { icon: Users, label: 'explore', link: "/profile" },
-        { icon: MessageCircle, label: 'Groups', link: "/messages" },
-        { icon: Bell, label: 'Projects', link: "/notification" },
-        { icon: Bookmark, label: 'Bookmarks', link: "/bookmark" },
-    ]
-
-    const profileItems = [
-        { icon: User, label: 'Profile' },
-        { icon: Settings, label: 'Settings' },
-        { icon: LogOut, label: 'Logout' },
-    ]
 
     return (
         <aside className=" hidden md:flex md:flex-col justify-evenly border-none h-[90vh] rounded-2xl fixed top-10 my-auto mx-10  w-80 p-4 bg-cardBg">
@@ -42,8 +30,8 @@ export default function Component() {
             </div>
 
             <nav className="flex-1 justify-center flex flex-col px-5 items-center space-y-2">
-                {navItems.map((item) => (
-                    <Link href={item.link as string} key={item.label}>
+                {navItems.map((item, index) => (
+                    <Link href={item.link as string} key={index}>
                         <Button
                             className={cn(
                                 ` w-44 justify-start shadow-none rounded-xl  font-medium py-6 text-white hover:bg-primaryColor bg-transparent transition-all duration-200 ease-in-out text-base`,
@@ -71,9 +59,9 @@ export default function Component() {
                 </div>
 
                 <div className="space-y-2">
-                    {profileItems.map((item) => (
+                    {profileItems.map((item, index) => (
                         <Button
-                            key={item.label}
+                            key={index}
                             variant="ghost"
                             className="w-full justify-start text-sm hover:bg-primaryColor"
                         >

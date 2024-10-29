@@ -1,41 +1,37 @@
+"use client"
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { communities, skills } from '@/utils/constants/feed'
-import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
-import React from 'react'
-import Image from "next/image"
-import { Edit, Search } from 'lucide-react'
-import { MdRssFeed } from "react-icons/md";
-import { TiGroup } from "react-icons/ti";
-import { FaUserCircle } from "react-icons/fa";
+import { Card } from '@/components/ui/card'
+import React, { useState } from 'react'
 import Link from 'next/link'
+import { Search } from 'lucide-react';
+import { MdRssFeed } from 'react-icons/md';
+import { TiGroup } from 'react-icons/ti';
+import { FaUserCircle } from 'react-icons/fa';
+
+const navItems = [
+    { label: 'Feed', icon: MdRssFeed, link: '/' },
+    { label: 'Search', icon: Search, link: '/search' },
+    { label: 'Groups', icon: TiGroup, link: '/groups' },
+    { label: 'Profile', icon: FaUserCircle, link: '/profile' },
+];
 
 const Left = () => {
-    return (
-        <div className=' pl-10 bg-red-500'>
-            <Card className=' md:flex md:w-[20vw] md:gap-5 border-none md:p-5 rounded-2xl mb-5'>
-                <Button className=' bg-primaryColor md:flex md:gap-2 text-white py-6 text-lg hover:bg-primaryColor/80 rounded-xl hover:transition-transform hover:scale-125 group hover:rotate-6'>
-                    <MdRssFeed className='' size={16} />
-                    <h2 className=' hidden '>Feed</h2>
-                </Button>
-                <Button className=' bg-primaryColor md:flex md:gap-2 text-white py-6 text-lg hover:bg-primaryColor/80 rounded-xl hover:transition-transform hover:scale-125 group hover:rotate-6'>
-                    <Search className=' h5 w-5' />
-                    <h2 className=' hidden '>Search</h2>
-                </Button>
-                <Button className=' bg-primaryColor md:flex md:gap-2 text-white py-6 text-lg hover:bg-primaryColor/80 rounded-xl hover:transition-transform hover:scale-125 group hover:rotate-6'>
-                    <TiGroup className='' size={16} />
-                    <h2 className=' hidden '>Groups</h2>
-                </Button>
-                <Link href='/profile'>
-                    <Button className=' bg-primaryColor md:flex md:gap-2 text-white py-6 text-lg hover:bg-primaryColor/80 rounded-xl hover:transition-transform hover:scale-125 group hover:rotate-6'>
-                        <FaUserCircle className='' size={16} />
-                        <h2 className=' hidden '>Profile</h2>
-                    </Button>
-                </Link>
+    const [activeLink, setActiveLink] = useState('/');
 
+    return (
+        <div className='mx-auto w-full'>
+            <Card className='flex w-fit bg-cardBg border-none mx-auto p-5 gap-2 mb-2 rounded-full py-2'>
+                {navItems.map((item, index) => (
+                    <Link href={item.link} key={index} onClick={() => setActiveLink(item.link)}>
+                        <Button className={`group ${activeLink === item.link ? ' bg-primaryColor' : 'bg-secondary'} hover:bg-primaryColor md:flex md:gap-2 text-white py-6 text-lg  ${index % 2 == 0 ? " rounded-l-full rounded-tr-full" : "rounded-r-full rounded-tl-full"}`}>
+                            <item.icon className={`${activeLink === item.link ? "text-secondary" : "text-primaryColor"} h-5 w-5 group-hover:text-secondary text-primaryColor`} />
+                            <h2 className='hidden'>{item.label}</h2>
+                        </Button>
+                    </Link>
+                ))}
             </Card>
 
-            <Card className=' md:block border-none md:w-[20vw]'>
+            {/* <Card className=' md:block border-none md:w-[20vw]'>
                 <CardHeader className=' flex flex-row gap-5 items-center'>
                     <Avatar>
                         <AvatarImage src="/creat.jpg" height={20} width={20} className=' h-12 w-12 rounded-full'></AvatarImage>
@@ -61,7 +57,7 @@ const Left = () => {
                     </Link>
 
                 </CardFooter>
-            </Card>
+            </Card> */}
         </div >
 
     )

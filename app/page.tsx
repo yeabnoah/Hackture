@@ -14,7 +14,7 @@ export default function SocialPlatform() {
         <div className=" flex-1 mx-auto md:ml-[26vw]">
           <Center />
         </div>
-        <div className=" fixed flex-1 h-fit">
+        <div className="  flex-1 h-fit">
           <RightSidebar />
         </div>
       </div>
